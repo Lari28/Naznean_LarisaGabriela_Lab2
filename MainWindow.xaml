@@ -58,8 +58,12 @@ Width="131" Margin="0,26,0,0">
                         <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
+
                 </MenuItem>
+                <MenuItem x:Name="stopMenuItem" Header="Stop"/>
+                <MenuItem x:Name="stopMenuItem" Header="Stop" Click="stopToolStripMenuItem_Click"/>
+            
             </MenuItem>
         </Menu>
-    </Grid>
+       </Grid>
 </Window>
