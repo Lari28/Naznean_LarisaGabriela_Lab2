@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Naznean_LarisaGabriela_Lab2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts Factory" Height="526" Width="933" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+         Title="Virtual Doughnuts Factory" Height="526" Width="933" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="153*"/>
@@ -46,20 +46,28 @@
         <Button x:Name="btnCheckOut" Content="Check Out" HorizontalAlignment="Left" Margin="468,441,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="-0.039,3.098" Grid.Column="2"/>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
 Width="131" Margin="0,26,0,0">
-            <MenuItem Header="File">
-                <MenuItem Header="Exit"/>
-                <MenuItem Header="MenuItem"/>
-                <MenuItem Header="MenuItem"/>
+            <MenuItem x:Name="fileMenuItem" Header="File">
+                <MenuItem x:Name="exitMenuItem" Header="Exit" Click="exitToolStripMenuItem_Click"/>
             </MenuItem>
-            <MenuItem Header="_Doughnuts">
-                <MenuItem Header="Make">
-                    <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+            <MenuItem x:Name="doughnutsMenuItem" Header="Doughnuts">
+                <MenuItem x:Name="makeMenuItem" Header="Make">
+                    <MenuItem x:Name="raizedMenuItem" Header="Raised">
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed" Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar" IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
-                    <MenuItem Header="Filled"/>
+                    <MenuItem x:Name="filledMenuItem" Header="Filled" Click="FilledItems_Click">
+                        <MenuItem x:Name="lemonFilledMenuItem" Header="Lemon" IsCheckable="True"/>
+                        <MenuItem x:Name="chocolateFilledMenuItem" Header="Chocolate" IsCheckable="True"/>
+                        <MenuItem x:Name="vanillaFilledMenuItem" Header="Vanilla" IsCheckable="True"/>
+                    </MenuItem>
                 </MenuItem>
+                <MenuItem x:Name="stopMenuItem" Header="Stop" Click="stopToolStripMenuItem_Click" InputGestureText="Ctrl+S" Command="CustomCommands:StopCommand.Launch"/>
+                <MenuItem Header="Inventory" Command="ApplicationCommands.Print"></MenuItem>
             </MenuItem>
+            <MenuItem/>
+            <MenuItem/>
         </Menu>
+
     </Grid>
 </Window>
+}
